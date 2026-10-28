@@ -23,4 +23,25 @@ When you type **`solve it`**, Conan reveals the truth.
 
 - **Frontend**: React + TypeScript  
 - **AI**: Google Gemini API  
-- **Styling**: CSS / Tailwind  
+- **Styling**: CSS / Tailwind
+
+## Development
+
+The Gemini API key is kept in the Node proxy and is never bundled into the frontend.
+
+1. Copy `Backend/.env.example` to `Backend/.env` and add a new Gemini API key.
+2. Start the proxy:
+
+   ```bash
+   cd Backend
+   npm start
+   ```
+
+3. In a second terminal, start the frontend:
+
+   ```bash
+   cd Frontend
+   npm run dev
+   ```
+
+The frontend sends requests to `/api/gemini`; Vite proxies them to the backend during development.
